@@ -1,0 +1,2 @@
+// 点列挙のものをいい感じに表示する
+by:    o  spoofing a Reset message in response to a Confirmable message or        Non-confirmable message, thus making an endpoint "deaf"; or     o  spoofing an ACK in response to a CON message, thus potentially        preventing the sender of the CON message from retransmitting, and        drowning out the actual response; or

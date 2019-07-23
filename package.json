@@ -1,0 +1,18 @@
+{
+  "name": "trimtr",
+  "scripts": {
+    "build": "yarn run tsc /Users/hp29/IdeaProjects/trimtr/src/*.ts",
+    "run" : "node ./build/app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
