@@ -1,0 +1,21 @@
+{
+    "name": "trimtr",
+    "version": "1.0",
+    "description": "trim translated sentences",
+    "permissions": [
+        "activeTab",
+        "http://127.0.0.1:5000/trim"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://translate.google.co.jp/*"
+            ],
+            "js": [
+                "jquery.min.js",
+                "trimtr.js"
+            ]
+        }
+    ],
+    "manifest_version": 2
+}
