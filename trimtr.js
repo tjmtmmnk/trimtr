@@ -1,5 +1,11 @@
 window.addEventListener("load", main, false);
 
+function _parseJSON(response) {
+    return response.text().then(function (text) {
+        return text ? JSON.parse(text) : {}
+    })
+}
+
 function main(e) {
     $('textarea#source').change(() => {
         var text = $('textarea#source').val();
@@ -10,8 +16,18 @@ function main(e) {
             },
             body: text
         })
-            .then((trimed_text) => console.log(trimed_text))
-            .catch((err) => console.log(err));
-        console.log("aaa");
+            .then((res) => {
+                if (res.status !== 200) {
+                    console.log("maybe ISE");
+                    return;
+                }
+
+                _parseJSON(res)
+                    .then((data) => {
+                        var trimed_text = data[0].text;
+                        $('textarea#source').val(trimed_text);
+                    })
+            })
+            .catch((err) => console.log("Fetch Error : -S", err));
     });
-};
+}

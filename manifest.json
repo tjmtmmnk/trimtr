@@ -3,7 +3,8 @@
     "version": "1.0",
     "description": "trim translated sentences",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "http://127.0.0.1:5000/trim"
     ],
     "content_scripts": [
         {
