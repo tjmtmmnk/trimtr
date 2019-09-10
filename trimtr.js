@@ -9,7 +9,7 @@ function _parseJSON(response) {
 function main(e) {
     $('textarea#source').change(() => {
         var text = $('textarea#source').val();
-        fetch('http://127.0.0.1:5000/trim', {
+        fetch('https://trimtr.herokuapp.com/trim', {
             method: 'post',
             headers: {
                 "Content-Type": "text/plain; charset=UTF-8"
