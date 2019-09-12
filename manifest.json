@@ -1,7 +1,7 @@
 {
     "name": "trimtr",
     "version": "1.0",
-    "description": "trim translated sentences",
+    "description": "Google翻訳で翻訳される文章を文ごとに改行したり、不要な改行・空白を削除したり見やすい形に整形します。This tool shapes sentences that will be translated in 'Google translate'.",
     "permissions": [
         "activeTab"
     ],
