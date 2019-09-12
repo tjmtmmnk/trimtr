@@ -1,8 +1,9 @@
 window.addEventListener("load", main, false);
 
 function main(e) {
-    $('textarea#source').change(() => {
-        var text = $('textarea#source').val();
+    const textarea = document.getElementById("source");
+    textarea.addEventListener('change', (e) => {
+        const text = e.srcElement.value;
         fetch('https://trimtr.herokuapp.com/trim', {
             method: 'post',
             headers: {
@@ -16,7 +17,7 @@ function main(e) {
                 }
 
                 res.json()
-                    .then((data) => $('textarea#source').val(data[0].text))
+                    .then((data) => textarea.value = data[0].text)
             })
             .catch((err) => console.log(err));
     });
