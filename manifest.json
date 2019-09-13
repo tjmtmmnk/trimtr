@@ -8,6 +8,7 @@
     "content_scripts": [
         {
             "matches": [
+                "https://translate.google.com/*",
                 "https://translate.google.co.jp/*"
             ],
             "js": [
