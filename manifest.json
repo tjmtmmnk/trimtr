@@ -1,20 +1,28 @@
 {
     "name": "trimtr",
-    "version": "1.0",
+    "version": "1.2",
     "description": "Google翻訳で翻訳される文章を文ごとに改行したり、不要な改行・空白を削除したり見やすい形に整形します。This tool shapes sentences that will be translated in 'Google translate'.",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "tabs"
     ],
     "content_scripts": [
         {
             "matches": [
                 "https://translate.google.com/*",
-                "https://translate.google.co.jp/*"
+                "https://translate.google.co.jp/*",
+                "https://www.deepl.com/*"
             ],
             "js": [
                 "trimtr.js"
             ]
         }
     ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
     "manifest_version": 2
 }
