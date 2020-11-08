@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
     chrome.runtime.onMessage.addListener(message => {
         let textarea;
         if (message.target == "google") {
-            textarea = document.getElementById("source");
+            textarea = document.querySelector("textarea");
         } else if (message.target == "deepl") {
             textarea = document.getElementsByClassName("lmt__source_textarea")[0];
         }
