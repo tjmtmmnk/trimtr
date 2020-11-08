@@ -1,3 +1,7 @@
+const triggerEvent = (el, ev) => {
+    const evt = new Event(ev, {bubbles: true});
+    el.dispatchEvent(evt);
+}
 window.addEventListener('load', () => {
     chrome.runtime.sendMessage({ action: "judgeDomain" });
 
@@ -10,7 +14,7 @@ window.addEventListener('load', () => {
         }
 
         textarea.addEventListener('change', e => {
-            const text = e.srcElement.value;
+            const text = e.target.value;
             fetch('https://trimtr.herokuapp.com/trim', {
                 method: 'post',
                 headers: {
@@ -24,10 +28,12 @@ window.addEventListener('load', () => {
                     }
 
                     res.json()
-                        .then((data) => textarea.value = data[0].text)
+                        .then((data) => {
+                            textarea.value = data[0].text;
+                            triggerEvent(textarea, 'input');
+                        })
                 })
                 .catch((err) => console.log(err));
         });
     });
 });
-
